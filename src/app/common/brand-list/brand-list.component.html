@@ -1,0 +1,38 @@
+<a
+  class="list-group-item list-group-item-disabled"
+  style="background-color: blue; color: aliceblue"
+  >Brand</a
+>
+
+<ul class="list-group" *ngFor="let brand of brands">
+  <li class="list-group-item">
+    <a>
+      <img src="{{ brand.image }}" style="width: 40px; padding-right: 15px" />{{
+        brand.name
+      }}</a
+    >
+    <div class="brand-button">
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        (click)="deleteBrand(brand.id)"
+      >
+        <i class="fa-solid fa-trash text-danger"></i>
+      </button>
+
+      <button
+        type="button"
+        routerLink="/brand-edit"
+        class="btn btn-outline-dark"
+      >
+        <i class="fa-solid fa-edit text-warning"></i>
+      </button>
+    </div>
+  </li>
+</ul>
+
+<div class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-primary" routerLink="brand-add" type="button">
+    Brand Add
+  </button>
+</div>
